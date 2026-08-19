@@ -1,8 +1,16 @@
 # Cost Cap Tracker
 
-A personal expense tracker themed after F1's cost cap regulations. Log expenses, tag them with F1-flavored categories, set a monthly cost cap, and get a breach warning when you go over it.
+A personal expense tracker themed after F1's cost cap regulations — log
+expenses, tag them with F1-flavored categories, set a monthly cost cap, and
+get a breach warning when you go over it.
 
-Project: https://roadmap.sh/projects/expense-tracker
+## Features
+
+- Add, update, delete, and list expenses, with optional category filtering
+- Spending summary, overall or scoped to a month of the current year
+- Monthly cost cap: expenses added past the cap print a breach warning
+- Export expenses to CSV
+- Local persistence via SQLite (`vessel.db`), created on first run
 
 ## Requirements
 
@@ -17,8 +25,6 @@ make release   # cargo build --release
 make check     # cargo check
 make test      # cargo test
 ```
-
-Data is stored locally in a SQLite file (`vessel.db`) created in the working directory on first run.
 
 ## Usage
 
@@ -71,3 +77,25 @@ cargo run -- export --output expenses.csv
 ```bash
 cargo run -- categories
 ```
+
+## Project structure
+
+```
+src/
+├── main.rs           # entry point
+├── cli.rs            # argument parsing
+├── service.rs        # command orchestration
+├── output.rs         # expense/budget formatting
+├── errors.rs         # error types
+├── domain/
+│   ├── expense.rs     # expense model
+│   └── budget.rs      # cost cap model
+└── storage/
+    └── sqlite.rs      # SQLite persistence
+```
+
+## Project origin
+
+Built as an implementation of the
+[Expense Tracker](https://roadmap.sh/projects/expense-tracker) project from
+[roadmap.sh](https://roadmap.sh).
