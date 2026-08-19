@@ -2,6 +2,8 @@
 
 A personal expense tracker themed after F1's cost cap regulations. Log expenses, tag them with F1-flavored categories, set a monthly cost cap, and get a breach warning when you go over it.
 
+Project: https://roadmap.sh/projects/expense-tracker
+
 ## Requirements
 
 - Rust (edition 2021) and Cargo
