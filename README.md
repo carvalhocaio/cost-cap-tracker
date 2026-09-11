@@ -58,7 +58,8 @@ uv run cost-cap <COMMAND> [OPTIONS]
 
 > The GIF above is generated with [VHS](https://github.com/charmbracelet/vhs)
 > from [`assets/demo.tape`](assets/demo.tape). Regenerate it locally with
-> `vhs assets/demo.tape`.
+> `vhs assets/demo.tape` (requires VHS <= 0.11.0 -- 0.12.0 has a rendering
+> regression that silently produces no output).
 
 ### Commands
 
